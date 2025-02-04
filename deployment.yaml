@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: teste-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: teste
+  template:
+    metadata:
+      labels:
+        app: teste
+    spec:
+      containers:
+      - name: teste
+        image: ruab28/teste # Atualizado para seu Docker Hub
+        ports:
+        - containerPort: 3000
